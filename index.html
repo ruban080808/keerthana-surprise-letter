@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Keerthana Akka 💖</title>
+<style>
+  :root { --pink:#ff5d9e; --purple:#8054d8; --ink:#382447; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; font-family: "Segoe UI", system-ui, sans-serif;
+    color:white; text-align:center; overflow-x:hidden;
+    background: radial-gradient(circle at top, #633f9e 0, #2c174b 48%, #160d2a 100%);
+    display:flex; align-items:center; justify-content:center; padding:24px 14px;
+  }
+  .glow { position:fixed; width:260px; height:260px; border-radius:50%; filter:blur(65px); opacity:.25; pointer-events:none; }
+  .g1 { background:#ff4fa3; top:5%; left:-90px; }
+  .g2 { background:#7d70ff; right:-90px; bottom:5%; }
+  .card {
+    position:relative; width:min(680px,100%); padding:clamp(22px,5vw,42px);
+    border:1px solid rgba(255,255,255,.22); border-radius:28px;
+    background:rgba(255,255,255,.09); backdrop-filter:blur(14px);
+    box-shadow:0 22px 70px rgba(0,0,0,.28);
+  }
+  .eyebrow { letter-spacing:3px; text-transform:uppercase; font-size:.75rem; color:#ffd4e7; }
+  h1 { font-size:clamp(2rem,7vw,3.5rem); line-height:1.1; margin:12px 0; }
+  .sub { color:#eadcfb; line-height:1.6; }
+  .date { display:inline-block; margin:14px 0 22px; padding:9px 17px; border-radius:999px; background:rgba(255,255,255,.12); border:1px solid #ffffff30; }
+  .countdown { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:18px 0 25px; }
+  .time { background:rgba(17,8,34,.36); border:1px solid #ffffff24; padding:14px 5px; border-radius:16px; }
+  .time strong { display:block; font-size:clamp(1.6rem,6vw,2.5rem); }
+  .time span { font-size:.75rem; letter-spacing:1px; color:#e7d9f8; }
+  .envelope-wrap { margin:22px auto 10px; }
+  .envelope { font-size:clamp(5rem,18vw,8rem); filter:drop-shadow(0 10px 18px #0005); animation:float 2.5s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-9px) rotate(2deg)} }
+  button {
+    border:0; border-radius:999px; padding:14px 23px; font-weight:750; font-size:1rem;
+    cursor:pointer; color:#421b4f; background:linear-gradient(100deg,#ffd4e6,#fff0b9);
+    box-shadow:0 7px 22px #0003; transition:transform .2s;
+  }
+  button:hover { transform:translateY(-2px); }
+  button:disabled { opacity:.45; cursor:not-allowed; transform:none; }
+  .hint { min-height:24px; color:#f9d8eb; font-size:.92rem; }
+  .letter {
+    text-align:left; margin-top:24px; padding:clamp(18px,4vw,30px);
+    background:#fffaf4; color:#4b3047; border-radius:18px; box-shadow:0 12px 35px #0003;
+    display:none; line-height:1.8; animation:appear .7s ease both;
+  }
+  .letter h2 { text-align:center; color:#bb3979; margin-top:0; }
+  .letter .tamil { font-weight:650; color:#743b76; }
+  .signature { text-align:right; margin-top:22px; font-weight:800; color:#bb3979; }
+  @keyframes appear { from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:translateY(0)} }
+  .confetti { position:fixed; top:-20px; z-index:5; pointer-events:none; animation:fall linear forwards; }
+  @keyframes fall { to { transform:translateY(110vh) rotate(720deg); opacity:.15; } }
+  footer { margin-top:24px; color:#cbb9e3; font-size:.78rem; }
+  @media(max-width:380px){ .countdown{gap:5px}.time{padding:11px 2px}.time span{font-size:.65rem} }
+</style>
+</head>
+<body>
+<div class="glow g1"></div><div class="glow g2"></div>
+<main class="card">
+  <div class="eyebrow">A little surprise from your brother</div>
+  <h1>For Keerthana Akka 💖</h1>
+  <p class="sub">A letter full of love, wishes, and one big reminder:<br><strong>you never have to face anything alone.</strong></p>
+  <div class="date">🎂 4 November 2026</div>
+
+  <div id="countdownArea">
+    <p class="sub" id="countdownTitle">Your birthday surprise unlocks in…</p>
+    <div class="countdown" aria-label="Birthday countdown">
+      <div class="time"><strong id="days">00</strong><span>DAYS</span></div>
+      <div class="time"><strong id="hours">00</strong><span>HOURS</span></div>
+      <div class="time"><strong id="minutes">00</strong><span>MINUTES</span></div>
+      <div class="time"><strong id="seconds">00</strong><span>SECONDS</span></div>
+    </div>
+  </div>
+
+  <div class="envelope-wrap"><div class="envelope" id="envelope">💌</div></div>
+  <p class="hint" id="hint">A special letter is waiting just for you, Akka.</p>
+  <button id="openBtn" disabled>🔒 Open your birthday letter</button>
+
+  <section class="letter" id="letter">
+    <h2>Happy Birthday, Keerthana Akka! 🎉💗</h2>
+    <p>Dear Keerthana Akka,</p>
+    <p>Intha birthday-la unakku naan solla virumburathu onnu dhaan, ka — nee enakku romba special. Un face-la eppavum smile irukkanum; un manasu nimmadhiya irukkanum. Life-la enna nadandhaalum, nee thaniya illa. Unakku support panna un thambi eppavum irukken.</p>
+    <p class="tamil">“Keerthana akka nee yepadvumey nee happy ya irukanu ka.nee yeppavum feel panni depression ku pogakudathu unakku yedachi na yennaku nee call pannu ka yepavum unkuda naa irupen Keerthana kow.nee yeppavum alakudathu”</p>
+    <p>Akka, kashtama irukkura naal vandhaalum, un feelings-a ullaye vechikama ennoda pesu. Unna judge panna illa — unakku support panna naan irukken. Nee sirikkuratha paakradhu enakku santhosham. Un dreams ellam niraiveranum, un life full-a love, peace, health, and happiness irukkanum.</p>
+    <p>Today and every day, please remember how much you matter. Keep smiling, take care of yourself, and never be afraid to ask for help when things feel heavy.</p>
+    <p><strong>Happy Birthday once again, Keerthana Akka! 💖🎂</strong></p>
+    <p class="signature">With lots of love,<br>Your loving thambi ❤️</p>
+  </section>
+  <footer>Made with love, just for Keerthana Akka ✨</footer>
+</main>
+<script>
+  // The date is interpreted as 4 November 2026 at midnight in the visitor's local time.
+  const birthday = new Date(2026, 10, 4, 0, 0, 0).getTime();
+  const ids = ["days", "hours", "minutes", "seconds"];
+  const openBtn = document.getElementById("openBtn");
+  const hint = document.getElementById("hint");
+  const letter = document.getElementById("letter");
+  let unlocked = false;
+
+  function updateCountdown() {
+    const now = Date.now();
+    const remaining = birthday - now;
+    if (remaining <= 0) {
+      ids.forEach(id => document.getElementById(id).textContent = "00");
+      document.getElementById("countdownTitle").textContent = "It's your birthday, Keerthana Akka! 🎂";
+      openBtn.disabled = false;
+      openBtn.textContent = "💖 Open your birthday letter";
+      hint.textContent = "Your surprise is ready. Tap the button to open your letter!";
+      document.getElementById("envelope").textContent = "💌";
+      if (!unlocked) celebrate();
+      return;
+    }
+    const days = Math.floor(remaining / 86400000);
+    const hours = Math.floor((remaining % 86400000) / 3600000);
+    const minutes = Math.floor((remaining % 3600000) / 60000);
+    const seconds = Math.floor((remaining % 60000) / 1000);
+    [days, hours, minutes, seconds].forEach((n, i) => {
+      document.getElementById(ids[i]).textContent = String(n).padStart(2, "0");
+    });
+  }
+
+  openBtn.addEventListener("click", () => {
+    if (Date.now() < birthday) return;
+    letter.style.display = "block";
+    openBtn.style.display = "none";
+    hint.textContent = "A big hug from your thambi. 💗";
+    document.getElementById("envelope").textContent = "💝";
+    unlocked = true;
+    celebrate();
+    letter.scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  function celebrate() {
+    for (let i = 0; i < 65; i++) {
+      const piece = document.createElement("div");
+      piece.className = "confetti";
+      piece.textContent = ["💖", "✨", "🎉", "💕", "🌸"][Math.floor(Math.random()*5)];
+      piece.style.left = Math.random()*100 + "vw";
+      piece.style.animationDuration = (2.5 + Math.random()*3) + "s";
+      piece.style.fontSize = (12 + Math.random()*18) + "px";
+      document.body.appendChild(piece);
+      setTimeout(() => piece.remove(), 6000);
+    }
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
